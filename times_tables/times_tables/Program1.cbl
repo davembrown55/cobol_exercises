@@ -3,23 +3,28 @@
        data division.
        working-storage section.
 
-       01 THE-NUMBER PIC 99.
-       01 MULTIPLIER PIC 99.
-       01 TOTAL PIC 9999.
-       01 THE-NUMBER-TO-PRINT PIC Z9.
-       01 MULTIPLIER-TO-PRINT PIC Z9.
-       01 TOTAL-TO-PRINT PIC ZZZ9.
+       01 THE-NUMBER PIC 99 VALUE 00.
+       01 MULTIPLIER PIC 99 VALUE 00.
+       01 TOTAL PIC 9999 VALUE 0000.
+
+      *remove leading zeros
+       01 THE-NUMBER-TO-PRINT PIC Z9 VALUE 00.
+       01 MULTIPLIER-TO-PRINT PIC Z9 VALUE 00.
+       01 TOTAL-TO-PRINT PIC ZZZ9 VALUE 0000.
+
+       01 NEXT-STEP PIC X VALUE SPACES.
 
        procedure division.
 
        INITIALISE.
-           MOVE 00 TO MULTIPLIER.
-           MOVE 00 TO THE-NUMBER.
-           MOVE 0000 TO TOTAL.
+           INITIALIZE MULTIPLIER, MULTIPLIER-TO-PRINT, THE-NUMBER,
+           THE-NUMBER-TO-PRINT, TOTAL, TOTAL-TO-PRINT, NEXT-STEP
+           PERFORM RUN-PROGRAM.
+
        RUN-PROGRAM.
            PERFORM GET-NUMBER.
            PERFORM DISPLAY-TIMES-TABLE.
-           PERFORM END-PROGRAM.
+           PERFORM REPEAT-OR-CLOSE.
 
        GET-NUMBER.
            DISPLAY "Which times table (number)?"
@@ -37,6 +42,22 @@
 
                DISPLAY MULTIPLIER-TO-PRINT " * " THE-NUMBER-TO-PRINT " = " TOTAL-TO-PRINT
            END-PERFORM.
+
+       REPEAT-OR-CLOSE.
+           DISPLAY "PRESS Y TO SEE ANOTHER TIMES TABLE. OR, PRESS X TO EXIT"
+           ACCEPT NEXT-STEP.
+           MOVE FUNCTION UPPER-CASE(NEXT-STEP) TO NEXT-STEP.
+           
+
+           EVALUATE NEXT-STEP
+               WHEN "Y"
+                   PERFORM INITIALISE
+               WHEN "X"
+                   PERFORM END-PROGRAM
+               WHEN OTHER
+                   DISPLAY "ERROR!"
+                   PERFORM REPEAT-OR-CLOSE
+           END-EVALUATE.
 
        END-PROGRAM.
            goback.
