@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\davem\\source\\repos\\cobol\\times_tables\\times_tables\\times_tables.cblproj": {}
+  },
+  "projects": {
+    "C:\\Users\\davem\\source\\repos\\cobol\\times_tables\\times_tables\\times_tables.cblproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\davem\\source\\repos\\cobol\\times_tables\\times_tables\\times_tables.cblproj",
+        "projectName": "times_tables",
+        "projectPath": "C:\\Users\\davem\\source\\repos\\cobol\\times_tables\\times_tables\\times_tables.cblproj",
+        "packagesPath": "C:\\Users\\davem\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\davem\\source\\repos\\cobol\\times_tables\\times_tables\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\davem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\MicroFocus.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Micro Focus\\Visual COBOL\\NuGetPackages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "dependencies": {
+            "MicroFocus.COBOL.Runtime": {
+              "target": "Package",
+              "version": "[3.*, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
